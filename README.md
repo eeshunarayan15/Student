@@ -142,4 +142,42 @@ This application is a secured Spring Boot-based application designed for user au
 
 ---
 
+
+
+
+
+Sample Data to Accses the api
+Method Post:url : http://localhost:8080/signin
+Use Body to send json data for generating the jwt token
+{
+    "username":"admin",
+    "password":"adminPass"
+}
+
+=================================================
+Method Post:url : http://localhost:8080/api/subjects
+send jwt token in header as : key :Authorization value : Bearer jwt token
+
+send subject that you want to add in body in form of json data
+{
+    "name": "Environmental Science "
+}
+Response the the subject you added with id ,this id will be used in student api to add subject
+=============================================================================================
+Method Get:url : http://localhost:8080/api/subjects
+this will return all the added subjects
+==================================================================================================
+Method Post: url : http://localhost:8080/api/students
+json data sample for student registration send jwt token in header as : key :Authorization value : Bearer jwt token
+{
+  "name": "Kumar Kumar",
+  "address": "Indore India",
+  "subjects": [ {"id": 5}, {"id": 6}]
+}
+
+ ==============================================================================================================
+ Method Get: url : http://localhost:8080/api/students
+
+ this will return all student registered
+
 For any issues or further details, feel free to reach out.
